@@ -1,14 +1,9 @@
 #import <Preferences/Preferences.h>
 #import <UIKit/UIKit2.h>
-#import <Foundation/Foundation.h>
-#import <notify.h>
-#include <substrate.h>
+//#import <Foundation/Foundation.h>
+//#import <notify.h>
+//#include <substrate.h>
 
-/*
-@interface SpringBoard : UIApplication
-- (void)_relaunchSpringBoardNow;
-@end
-*/
 
 @interface UIStatusBar (statuscolor)
 - (void)setTintColor:(id)color;
