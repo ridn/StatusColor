@@ -95,19 +95,11 @@
 		</dict>
 		<dict>
 			<key>action</key>
-			<string>refreshSBarColor</string>
+			<string>twitter</string>
 			<key>cell</key>
 			<string>PSButtonCell</string>
 			<key>label</key>
-			<string>Apply Color</string>
-		</dict>
-		<dict>
-			<key>alignment</key>
-			<integer>1</integer>
-			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>footerText</key>
-			<string>Twitter: @r_idn</string>
+			<string>@r_idn</string>
 		</dict>
 	</array>
 	<key>title</key>

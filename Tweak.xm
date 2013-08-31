@@ -11,22 +11,13 @@ static float blue = [[plist objectForKey:@"B"]floatValue];
 static BOOL isDir = NO;
 
 %hook UIStatusBar
-
-
 - (id)activeTintColor
 {
 	if([[NSFileManager defaultManager] fileExistsAtPath: filePath isDirectory: &isDir] && !isDir) 
 		return [UIColor colorWithRed:red green:green blue:blue alpha:1];
   	else
-  		return %orig;
+  		return %orig;	
 }
-
-%new
-- (void)applyStatusColor
-{
-	[self setTintColor:[self activeTintColor]];
-}
-
 - (void)setTintColor:(id)arg1
 {
 	%orig([self activeTintColor]);          
@@ -55,8 +46,13 @@ static BOOL isDir = NO;
 %end
 
 static void refreshStatusBar(CFNotificationCenterRef center,void *observer,CFStringRef name,const void *object,CFDictionaryRef userInfo) {
-	//magically refresh the statusbars please ;(
-}
+	plist = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+	red = [[plist objectForKey:@"R"]floatValue];
+	green = [[plist objectForKey:@"G"]floatValue];
+	blue = [[plist objectForKey:@"B"]floatValue];
+	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault duration:0.2];
+
+	}
 %ctor
 {
 	%init();

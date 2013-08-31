@@ -27,25 +27,17 @@
 	}
 	return _specifiers;
 }
-- (void)refreshSBarColor
+- (void)twitter
 {
-	//I'm crying ;(
-	[[[[UIAlertView alloc] initWithTitle:@"StatusColor"
-                             message:@"Me no like repsring too. :("
-                            delegate:self
-                   cancelButtonTitle:@"Cancel"
-                   otherButtonTitles:@"Respring",nil] autorelease] show];
-}
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-
-	if (buttonIndex == [alertView cancelButtonIndex]) {
-		return;
-	}else{
-		//this is killing me. ugh.
-		//[(SpringBoard *)[%c(SpringBoard) sharedApplication] _relaunchSpringBoardNow];
-		system("killall -9 lsd SpringBoard");
+if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tweetbot:"]]) {
+		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"tweetbot:///user_profile/" stringByAppendingString:@"r_idn"]]];
+	} else if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"twitter:"]]) {
+		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"twitter://user?screen_name=" stringByAppendingString:@"r_idn"]]];
+	} else {
+		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"https://mobile.twitter.com/" stringByAppendingString:@"r_idn"]]];
 	}
 }
+
 @end
 
 // vim:ft=objc
