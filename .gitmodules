@@ -1,3 +1,6 @@
 [submodule "theos"]
 	path = theos
 	url = git://github.com/DHowett/theos.git
+[submodule "theos"]
+	path = statuscolorprefs/theos
+	url = git://github.com/DHowett/theos.git
