@@ -1,9 +1,5 @@
 #import <Preferences/Preferences.h>
 #import <UIKit/UIKit2.h>
-//#import <Foundation/Foundation.h>
-//#import <notify.h>
-//#include <substrate.h>
-
 
 @interface UIStatusBar (statuscolor)
 - (void)setTintColor:(id)color;
